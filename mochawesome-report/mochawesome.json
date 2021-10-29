@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-29T06:45:55.445Z",
+    "end": "2021-10-29T06:46:12.455Z",
+    "duration": 17010,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59ccdc45-80e3-4a8d-8939-0d7055956e95",
+      "title": "",
+      "fullFile": "cypress/integration/test8Framework.js",
+      "file": "cypress/integration/test8Framework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "44591b86-3dc3-4678-a93e-3e235cdec39e",
+          "title": "My Second Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My FirstTest case",
+              "fullTitle": "My Second Test Suite My FirstTest case",
+              "timedOut": null,
+              "duration": 14640,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homepage = new _homePage.default();\nconst productpage = new _productPage.default();\ncy.visit(\"https://rahulshettyacademy.com/angularpractice/\");\nhomepage.getEditBox().type(this.data.name);\nhomepage.getGender().select(this.data.gender).should('have.value', 'Male');\nhomepage.getTwoWayDataBinding().should('have.value', this.data.name);\nhomepage.getEditBox().should('have.attr', 'minlength', '2');\nhomepage.getEntreprenure().should('be.disabled');\nhomepage.getShopTab().click();\nthis.data.productName;\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element);\n});\nvar sum = 0;\nconst total = 0;\nhomepage.getCheckout().click();\ncy.get('tr td:nth-child(4) strong').each(($e1, index, $list) => {\n  var eachPrice = $e1.text().replace(/₹./g, \"\");\n  sum = sum + Number(eachPrice);\n  cy.log(sum);\n});\ncy.get('h3 > strong').then(function (element) {\n  const amount = element.text();\n  var res = amount.split(\" \");\n  res = res[1].trim();\n  expect(Number);\n  total == res;\n});\nif (sum === Number(total)) {\n  cy.log(\"Calculation Pass\");\n}\nproductpage.clickCheckout().click();\nproductpage.getCountry().type('Ind');\ncy.wait(7000);\nproductpage.getSugestions().click();\ncy.wait(2000);\ncy.get('.checkbox > label').click();\ncy.contains('Purchase').click();\ncy.get('.alert').then(function (element) {\n  const actualText = element.text();\n  expect(actualText.includes(\"Success\")).to.be.true;\n});",
+              "err": {},
+              "uuid": "ac28b967-0bbc-4127-a80c-16290d305326",
+              "parentUUID": "44591b86-3dc3-4678-a93e-3e235cdec39e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac28b967-0bbc-4127-a80c-16290d305326"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14640,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
